@@ -59,10 +59,11 @@ window.createRoom = async function () {
   currentRoom = generateRoomCode();
 
   await setDoc(doc(db, "rooms", currentRoom), {
-    players: [playerName],
-    word: "",
-    imposter: ""
-  });
+  players: [playerName],
+  host: playerName,
+  word: "",
+  imposter: ""
+});
 
   enterLobby();
 };
@@ -76,8 +77,11 @@ window.joinRoom = async function () {
 
   if (roomSnap.exists()) {
     const data = roomSnap.data();
-    data.players.push(playerName);
-    await updateDoc(roomRef, { players: data.players });
+    
+    await updateDoc(roomRef, {
+      players: [...data.players, playerName]
+    });
+
     enterLobby();
   }
 };
@@ -88,16 +92,27 @@ function enterLobby() {
   document.getElementById("roomCode").innerText = currentRoom;
 
   const roomRef = doc(db, "rooms", currentRoom);
-  onSnapshot(roomRef, (docSnap) => {
-    const data = docSnap.data();
-    document.getElementById("players").innerHTML =
-      data.players.map(p => `<div>${p}</div>`).join("");
+onSnapshot(roomRef, (docSnap) => {
+  const data = docSnap.data();
 
-    if (data.word) {
-      showWord(data.word, data.imposter);
-    }
-  });
-}
+  document.getElementById("players").innerHTML =
+    data.players.map(p => 
+      `<div>${p} ${p === data.host ? "👑" : ""}</div>`
+    ).join("");
+
+  // Show button only if host
+  if (playerName === data.host) {
+    document.getElementById("startBtn").style.display = "block";
+    document.getElementById("newRoundBtn").style.display = "block";
+  } else {
+    document.getElementById("startBtn").style.display = "none";
+    document.getElementById("newRoundBtn").style.display = "none";
+  }
+
+  if (data.word) {
+    showWord(data.word, data.imposter);
+  }
+});
 
 window.startRound = async function () {
 
