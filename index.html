@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Who's The Imposter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <h1>Who's The Imposter 👀</h1>
+
+  <div id="home">
+    <input type="text" id="nameInput" placeholder="Enter your name" />
+    <button onclick="createRoom()">Create Room</button>
+    <input type="text" id="roomInput" placeholder="Enter Room Code" />
+    <button onclick="joinRoom()">Join Room</button>
+  </div>
+
+  <div id="lobby" class="hidden">
+    <h2>Room: <span id="roomCode"></span></h2>
+    <div id="players"></div>
+    <button id="startBtn" onclick="startRound()">Start Round</button>
+  </div>
+
+  <div id="game" class="hidden">
+    <h2>Your Word:</h2>
+    <div id="wordDisplay">Waiting...</div>
+    <button onclick="newRound()">New Word</button>
+  </div>
+
+</div>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
