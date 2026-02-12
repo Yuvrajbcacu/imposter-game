@@ -92,27 +92,28 @@ function enterLobby() {
   document.getElementById("roomCode").innerText = currentRoom;
 
   const roomRef = doc(db, "rooms", currentRoom);
-onSnapshot(roomRef, (docSnap) => {
-  const data = docSnap.data();
 
-  document.getElementById("players").innerHTML =
-    data.players.map(p => 
-      `<div>${p} ${p === data.host ? "👑" : ""}</div>`
-    ).join("");
+  onSnapshot(roomRef, (docSnap) => {
+    const data = docSnap.data();
 
-  // Show button only if host
-  if (playerName === data.host) {
-    document.getElementById("startBtn").style.display = "block";
-    document.getElementById("newRoundBtn").style.display = "block";
-  } else {
-    document.getElementById("startBtn").style.display = "none";
-    document.getElementById("newRoundBtn").style.display = "none";
-  }
+    document.getElementById("players").innerHTML =
+      data.players.map(p =>
+        `<div>${p} ${p === data.host ? "👑" : ""}</div>`
+      ).join("");
 
-  if (data.word) {
-    showWord(data.word, data.imposter);
-  }
-});
+    if (playerName === data.host) {
+      document.getElementById("startBtn").style.display = "block";
+      document.getElementById("newRoundBtn").style.display = "block";
+    } else {
+      document.getElementById("startBtn").style.display = "none";
+      document.getElementById("newRoundBtn").style.display = "none";
+    }
+
+    if (data.word) {
+      showWord(data.word, data.imposter);
+    }
+  });
+}
 
 window.startRound = async function () {
 
