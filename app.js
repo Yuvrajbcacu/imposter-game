@@ -129,16 +129,34 @@ function enterLobby() {
 }
 
 window.startRound = async function () {
+
   const roomRef = doc(db, "rooms", currentRoom);
   const roomSnap = await getDoc(roomRef);
   const data = roomSnap.data();
 
+  // Only host can start
   if (playerName !== data.host) {
     return;
   }
 
+  // Minimum players check
+  if (!data.players || data.players.length < 3) {
+    alert("Minimum 3 players required 😎");
+    return;
+  }
+
+  // Pick random word
   const randomWord = words[Math.floor(Math.random() * words.length)];
-  const randomImposter = data.players[Math.floor(Math.random() * data.players.length)];
+
+  // Pick EXACTLY one imposter
+  const randomIndex = Math.floor(Math.random() * data.players.length);
+  const randomImposter = data.players[randomIndex];
+
+  // Extra safety check (just in case)
+  if (!randomImposter) {
+    alert("Error selecting imposter. Try again.");
+    return;
+  }
 
   await updateDoc(roomRef, {
     word: randomWord,
