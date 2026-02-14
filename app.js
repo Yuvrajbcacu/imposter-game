@@ -14,187 +14,85 @@ let playerName = null;
 
 const words = [
 
-  // 😎 North Indian Meme Energy
-  "Tu jaanta hai mera baap kaun hai",
-  "Bhai scene kya hai",
-  "Kya kar raha hai life mein",
-  "Jugaad lagao",
-  "Bhai full tight scene",
-  "Setting ho gayi kya",
-  "OP banda",
-  "Legend banda",
-  "System hila denge",
-  "Aukat yaad dila dena",
-  "Bhai chill maar",
-  "Bakchodi band kar",
-  "Fadu plan",
-  "Bhai tu rehne de",
-  "Khatarnak aadmi",
-  "Full toxic energy",
-  "Overacting mat kar",
-  "Emotional damage",
-  "Kya mast life hai",
-  "Dil se bura lagta hai",
+  // 🏏 Cricket
+  "Kohli","Dhoni","Rohit","Bumrah","Jadeja","Gill","Sachin","Yuvraj","Hardik",
+  "IPL","Bat","Stump","Helmet","Umpire","Pitch","Boundary","Yorker","Googly",
 
-  // 😂 Viral Hindi Memes
-  "Rasode mein kaun tha",
-  "Binod",
-  "Moye Moye",
-  "So beautiful so elegant",
-  "JCB ki khudai",
-  "Ye bik gayi hai gormint",
-  "Chai pilo friends",
-  "Pawri ho rahi hai",
-  "Ayein?",
-  "Kaccha badam",
-  "Main nahi manta",
-  "Ye sab doglapan hai",
-  "Just looking like a wow",
-  "System hang",
-  "Bhai kya kar raha hai tu",
-  "Internet pe sab fake hai",
+  // 🎬 Bollywood
+  "Shahrukh","Salman","Aamir","Ranbir","Ranveer","Akshay","Ajay","Amitabh",
+  "Alia","Deepika","Katrina","Anushka","Kareena","Kiara","Kartik",
+  "Pathaan","Jawan","Sholay","Don","Lagaan","Swades","Dangal","Krrish",
 
-  // 🎬 Bollywood Dialogues (Memeable)
-  "Picture abhi baaki hai",
-  "Mogambo khush hua",
-  "All is well",
-  "How’s the josh",
-  "Don ko pakadna mushkil hai",
-  "Pushpa naam sunke flower samjha kya",
-  "Aata majhi satakli",
-  "Main apni favourite hoon",
-  "Bade bade deshon mein",
-  "Tumse na ho payega",
-  "Ye dosti hum nahi todenge",
-  "Bhai mere pass maa hai",
-  "Keh diya na bas keh diya",
-  "Ek baar jo maine commitment kar di",
-  "Control Uday Control",
+  // 😂 Meme Culture
+  "Binod","MoyeMoye","Rasode","JCB","Pawri","Elvish","CarryMinati",
+  "Triggered","Reel","Meme","Viral","Roast","Thumbnail","Influencer",
 
-  // 🏏 Cricket + Desi Commentary
-  "Virat aggression",
-  "Dhoni finisher",
-  "Rohit pull shot",
-  "Last over thriller",
-  "Super over pressure",
-  "Third umpire check",
-  "Bumrah yorker",
-  "IPL auction",
-  "Commentator shouting",
-  "Boundary line catch",
-  "Gully cricket rule",
-  "Bat leke bhaagna",
+  // 🍲 Food
+  "Rajma","Chawal","Paneer","Biryani","Samosa","Jalebi","Lassi","Paratha",
+  "Maggi","Momos","Chaat","Kachori","Kulfi","Halwa","Naan","Tandoor",
+  "ButterChicken","GolGappa","Chole","Pakoda",
 
-  // 🚇 Delhi / UP / North India Vibes
-  "Delhi Metro rush",
-  "Rajiv Chowk",
-  "UP Police",
-  "Noida traffic",
-  "Coaching Kota",
-  "IAS aspirant",
-  "Hostel rooftop",
-  "Shaadi baraat",
-  "Nagin dance",
-  "Band baja",
-  "Family function drama",
-  "Neighbour aunty gossip",
-  "Paranthe wali gali",
-  "Roadside chai",
-  "Dhaba stop",
+  // 🚇 North India
+  "Delhi","Noida","Lucknow","Kanpur","Jaipur","Agra","Varanasi","Chandigarh",
+  "Metro","Rickshaw","Dhaba","Baraat","Shaadi","Band","Dhol","Lehenga",
+  "Kurta","Pagdi","Mandap","Pandit",
 
-  // 🍲 Food but Real Desi Context
-  "Rajma chawal Sunday",
-  "Mummy ka paratha",
-  "Chole bhature morning",
-  "Gol gappa challenge",
-  "Biryani war",
-  "Maggi at 2AM",
-  "Chai and sutta discussion",
-  "Shaadi wala paneer",
-  "Extra butter naan",
-  "Street momos",
-  "Lassi glass",
-  "Jalebi garam",
+  // 🏫 College / Youth
+  "Backbencher","Proxy","Assignment","Viva","Hostel","Mess","Farewell",
+  "Freshers","Placement","Internship","Attendance","Notebook","Project",
+  "Crush","Friendzone","Roommate",
 
-  // 🧍 College / Friends
-  "Backbencher squad",
-  "Proxy attendance",
-  "Viva panic",
-  "Assignment copy",
-  "Internal marks",
-  "Lab partner",
-  "Hostel mess food",
-  "Farewell dance",
-  "Freshers intro",
-  "Crush in class",
-  "Friendzone",
-  "Group project sufferings",
-  "Placement tension",
+  // 📱 Internet / Tech
+  "Instagram","WhatsApp","YouTube","Netflix","Hotstar","UPI","Paytm",
+  "PhonePe","Amazon","Flipkart","iPhone","Android","WiFi","Screenshot",
+  "Hashtag","Emoji","Sticker",
 
-  // 📱 Internet Culture India
-  "Reel banani hai",
-  "Like share subscribe",
-  "Comment section fight",
-  "Influencer life",
-  "Collab bro",
-  "Viral reel",
-  "Trending audio",
-  "UPI failed",
-  "Phone battery 1%",
-  "Screenshot bhej",
+  // 🎉 Festivals
+  "Diwali","Holi","Navratri","Dussehra","RakshaBandhan","Lohri","KarwaChauth",
+  "Firecracker","Rangoli","Pichkari",
 
-  // 🎉 Wedding Chaos
-  "Haldi ceremony",
-  "Mehendi function",
-  "DJ wale babu",
-  "Dance floor slip",
-  "Cousin squad",
-  "Photographer bhaiya",
-  "Shaadi ka khana",
-  "Rishta meeting",
+  // 👨‍👩‍👧 Family & Social
+  "Aunty","Uncle","Cousin","Dadi","Nani","Papa","Mummy","Bhaiya","Didi",
+  "Neighbour","Teacher","Principal","Warden","Driver",
 
-  // 🤣 Desi Funny Characters
-  "Gym wala dost",
-  "Motivational bhai",
-  "Crypto expert uncle",
-  "Free advice uncle",
-  "Over smart cousin",
-  "Silent killer friend",
-  "Drama queen friend",
-  "Late always friend",
-  "Bina padhai topper",
+  // 🚗 Daily Life
+  "Thar","Bullet","Scooty","Auto","Petrol","Traffic","Helmet","Signal",
+  "Ticket","Platform","Train","Station",
 
-  // 🔥 Meme-Style Phrases
-  "Bhai OP",
-  "Skill issue",
-  "Mood off",
-  "Vibe match",
-  "Scene on hai",
-  "Mission failed successfully",
-  "Lag gaye",
-  "Bhai sambhal",
-  "Ye kya dekh liya",
-  "Pure chaos",
+  // 🧃 Snacks / Brands
+  "ParleG","Bournvita","Amul","Frooti","Maaza","ThumsUp","Sprite","Pepsi",
+  "Kurkure","Lays","Haldiram","Bingo",
 
-  // 🧠 Extra Spicy (safe but roasty)
-  "Dimag ka dahi",
-  "Over confidence",
-  "Drama mode on",
-  "Full time philosopher",
-  "Fake swag",
-  "Attention seeker",
-  "Self declared legend",
-  "Energy high but output zero",
+  // 🎮 Fun / Games
+  "Ludo","Carrom","Chess","Kabaddi","KhoKho","Badminton","Football",
+  "GullyCricket","Penalty","Trophy",
 
-  // 🌍 Small International References
-  "Cristiano Ronaldo",
-  "Lionel Messi",
-  "Mr Beast giveaway",
-  "Netflix binge",
-  "Elon Musk tweet",
-  "Marvel fan",
+  // 🎵 Pop Culture
+  "Arijit","HoneySingh","Badshah","Diljit","APDhillon","SidhuMoosewala",
+  "Spotify","Playlist","Concert",
 
-  // Repeat style expansion blocks to reach 1000+
+  // 🧠 Meme-ish Nouns (safe)
+  "Jugaad","Swag","Vibe","Chaos","Drama","Attitude","Ego","Flex",
+  "Legend","Noob","NPC","Sigma","Alpha","Aura",
+
+  // 🌍 Small International refs
+  "Messi","Ronaldo","MrBeast","ElonMusk","Bitcoin","Marvel","Batman","Joker",
+
+  // 🍛 Extra Desi Life (extendable)
+  "Tiffin","Chai","Thermos","Balcony","Terrace","Generator","Inverter",
+  "Tuition","Coaching","Exam","Result","Marksheet","Uniform","Library",
+
+  // 🎭 TV / Shows
+  "BiggBoss","KapilSharma","CID","TarakMehta","IndianIdol","Splitsvilla",
+
+  // 👕 Clothing / Style
+  "Sneakers","Kurti","Jeans","Sherwani","Dupatta","Watch","Chain","Goggles",
+
+  // 🏠 Household
+  "PressureCooker","Belan","Chimta","Bucket","Mug","Sofa","Mattress","Cooler",
+
+  // 🔥 Extra memes / internet slang nouns
+  "OP","Clutch","Lag","Ping","Spam","Bot","Moderator","Chat","Subscriber"
 ];
 function generateRoomCode() {
   return Math.random().toString(36).substring(2, 7).toUpperCase();
