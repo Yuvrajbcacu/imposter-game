@@ -83,7 +83,7 @@ const words = [
 
 /* ===== RANDOM FUN ===== */
 "Vibe","Drama","Attitude","Ego","Chaos","Legend","Swag","Energy","Focus","Motivation",
-"Alarm","Charger","Headphones","Speaker","Camera","Tripod","Selfie","Filter","Caption","Playlist"
+"Alarm","Charger","Headphones","Speaker","Camera","Tripod","Selfie","Filter","Caption","Playlist",
 
 "Breakup","Ex","Rebound","Situationship","Date","BlindDate","Tinder","Bumble","Hinge",
 "RedFlag","GreenFlag","Ghosting","Crush","Proposal","Friendzone","Cheating","Commitment",
@@ -214,3 +214,4 @@ function showWord(word, imposter) {
   }
 
 }
+
