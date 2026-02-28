@@ -14,85 +14,81 @@ let playerName = null;
 
 const words = [
 
-  // 🏏 Cricket
-  "Kohli","Dhoni","Rohit","Bumrah","Jadeja","Gill","Sachin","Yuvraj","Hardik",
-  "IPL","Bat","Stump","Helmet","Umpire","Pitch","Boundary","Yorker","Googly",
+/* ===== CRICKET ===== */
+"Kohli","Dhoni","Rohit","Bumrah","Gill","Jadeja","Hardik","Sachin","Yuvraj","Dravid",
+"Ganguly","Sehwag","Pant","KL","Ashwin","Chahal","Siraj","Sky","WorldCup","IPL",
+"Bat","Ball","Stump","Bouncer","Yorker","Googly","Helmet","Pad","Pitch","Boundary",
+"Six","Four","Catch","Runout","Umpire","DRS","Toss","Powerplay","SuperOver","Century",
 
-  // 🎬 Bollywood
-  "Shahrukh","Salman","Aamir","Ranbir","Ranveer","Akshay","Ajay","Amitabh",
-  "Alia","Deepika","Katrina","Anushka","Kareena","Kiara","Kartik",
-  "Pathaan","Jawan","Sholay","Don","Lagaan","Swades","Dangal","Krrish",
+/* ===== BOLLYWOOD ACTORS ===== */
+"Shahrukh","Salman","Aamir","Ranbir","Ranveer","Akshay","Ajay","Amitabh","Hrithik","Saif",
+"Alia","Deepika","Katrina","Anushka","Kareena","Kiara","Kartik","Shraddha","Varun","Sunny",
 
-  // 😂 Meme Culture
-  "Binod","MoyeMoye","Rasode","JCB","Pawri","Elvish","CarryMinati",
-  "Triggered","Reel","Meme","Viral","Roast","Thumbnail","Influencer",
+/* ===== BOLLYWOOD MOVIES ===== */
+"Pathaan","Jawan","Dangal","Sholay","Don","Lagaan","Swades","Krrish","Gadar","HeraPheri",
+"Golmaal","RaOne","Singham","Drishyam","Baahubali","Pushpa","Animal","ChennaiExpress","PK","3Idiots",
 
-  // 🍲 Food
-  "Rajma","Chawal","Paneer","Biryani","Samosa","Jalebi","Lassi","Paratha",
-  "Maggi","Momos","Chaat","Kachori","Kulfi","Halwa","Naan","Tandoor",
-  "ButterChicken","GolGappa","Chole","Pakoda",
+/* ===== MEME CULTURE ===== */
+"Binod","MoyeMoye","Rasode","JCB","Pawri","Elvish","CarryMinati","Triggered","Reel","Meme",
+"Viral","Roast","Thumbnail","Influencer","Sigma","Alpha","Aura","Flex","NPC","Noob",
+"OP","Clutch","Lag","Spam","Bot","Subscriber","Hashtag","Screenshot","Sticker","Emoji",
 
-  // 🚇 North India
-  "Delhi","Noida","Lucknow","Kanpur","Jaipur","Agra","Varanasi","Chandigarh",
-  "Metro","Rickshaw","Dhaba","Baraat","Shaadi","Band","Dhol","Lehenga",
-  "Kurta","Pagdi","Mandap","Pandit",
+/* ===== NORTH INDIA CITIES ===== */
+"Delhi","Noida","Lucknow","Kanpur","Agra","Varanasi","Jaipur","Chandigarh","Patna","Meerut",
+"Ghaziabad","Gurgaon","Prayagraj","Haridwar","Shimla","Manali","Amritsar","Dehradun","Aligarh","Bareilly",
 
-  // 🏫 College / Youth
-  "Backbencher","Proxy","Assignment","Viva","Hostel","Mess","Farewell",
-  "Freshers","Placement","Internship","Attendance","Notebook","Project",
-  "Crush","Friendzone","Roommate",
+/* ===== FOOD ===== */
+"Rajma","Chawal","Paneer","Biryani","Samosa","Jalebi","Lassi","Paratha","Maggi","Momos",
+"Chaat","Kachori","Kulfi","Halwa","Naan","Tandoor","Pakoda","GolGappa","Chole","ButterChicken",
+"Raita","Papad","Pickle","Chai","Coffee","Frooti","Maaza","ThumsUp","Sprite","Pepsi",
 
-  // 📱 Internet / Tech
-  "Instagram","WhatsApp","YouTube","Netflix","Hotstar","UPI","Paytm",
-  "PhonePe","Amazon","Flipkart","iPhone","Android","WiFi","Screenshot",
-  "Hashtag","Emoji","Sticker",
+/* ===== FESTIVALS ===== */
+"Diwali","Holi","Navratri","Dussehra","RakshaBandhan","Lohri","KarwaChauth","Eid","Christmas","Janmashtami",
+"GaneshChaturthi","Baisakhi","MakarSankranti","Rangoli","Pichkari","Firecracker","Dhol","Garba","Aarti","Prasad",
 
-  // 🎉 Festivals
-  "Diwali","Holi","Navratri","Dussehra","RakshaBandhan","Lohri","KarwaChauth",
-  "Firecracker","Rangoli","Pichkari",
+/* ===== COLLEGE LIFE ===== */
+"Backbencher","Proxy","Assignment","Viva","Hostel","Mess","Farewell","Freshers","Placement","Internship",
+"Attendance","Notebook","Project","Crush","Friendzone","Roommate","Canteen","Library","Exam","Result",
 
-  // 👨‍👩‍👧 Family & Social
-  "Aunty","Uncle","Cousin","Dadi","Nani","Papa","Mummy","Bhaiya","Didi",
-  "Neighbour","Teacher","Principal","Warden","Driver",
+/* ===== INTERNET / TECH ===== */
+"Instagram","WhatsApp","YouTube","Netflix","Hotstar","UPI","Paytm","PhonePe","Amazon","Flipkart",
+"iPhone","Android","WiFi","Bluetooth","Laptop","Keyboard","Mouse","Router","Password","Notification",
 
-  // 🚗 Daily Life
-  "Thar","Bullet","Scooty","Auto","Petrol","Traffic","Helmet","Signal",
-  "Ticket","Platform","Train","Station",
+/* ===== DAILY LIFE ===== */
+"Metro","Rickshaw","Auto","Dhaba","Shaadi","Baraat","Band","Dhol","Lehenga","Kurta",
+"Pagdi","Mandap","Pandit","Helmet","Signal","Traffic","Petrol","Ticket","Platform","Station",
 
-  // 🧃 Snacks / Brands
-  "ParleG","Bournvita","Amul","Frooti","Maaza","ThumsUp","Sprite","Pepsi",
-  "Kurkure","Lays","Haldiram","Bingo",
+/* ===== FAMILY ===== */
+"Aunty","Uncle","Cousin","Dadi","Nani","Papa","Mummy","Bhaiya","Didi","Neighbour",
+"Teacher","Principal","Warden","Driver","Pandit","Barber","Doctor","Engineer","Lawyer","Judge",
 
-  // 🎮 Fun / Games
-  "Ludo","Carrom","Chess","Kabaddi","KhoKho","Badminton","Football",
-  "GullyCricket","Penalty","Trophy",
+/* ===== SPORTS ===== */
+"Football","Kabaddi","KhoKho","Badminton","Chess","Carrom","Ludo","Penalty","Trophy","Referee",
+"Stadium","Coach","Captain","Goal","Medal","Gym","Protein","Trainer","Dumbbell","Treadmill",
 
-  // 🎵 Pop Culture
-  "Arijit","HoneySingh","Badshah","Diljit","APDhillon","SidhuMoosewala",
-  "Spotify","Playlist","Concert",
+/* ===== BRANDS ===== */
+"ParleG","Bournvita","Amul","Haldiram","Bingo","Kurkure","Lays","Cadbury","KitKat","Magnum",
+"Zomato","Swiggy","Ola","Uber","Rapido","Dominos","PizzaHut","Starbucks","KFC","McDonalds",
 
-  // 🧠 Meme-ish Nouns (safe)
-  "Jugaad","Swag","Vibe","Chaos","Drama","Attitude","Ego","Flex",
-  "Legend","Noob","NPC","Sigma","Alpha","Aura",
+/* ===== DESI OBJECTS ===== */
+"Tiffin","Balcony","Terrace","Generator","Inverter","Tuition","Coaching","Marksheet","Uniform","PressureCooker",
+"Belan","Bucket","Mug","Cooler","Fan","AC","Geyser","Curtain","Remote","Mattress",
 
-  // 🌍 Small International refs
-  "Messi","Ronaldo","MrBeast","ElonMusk","Bitcoin","Marvel","Batman","Joker",
+/* ===== TV SHOWS ===== */
+"BiggBoss","CID","KapilSharma","TarakMehta","IndianIdol","Splitsvilla","Roadies","MTV","Aashram","Mirzapur",
 
-  // 🍛 Extra Desi Life (extendable)
-  "Tiffin","Chai","Thermos","Balcony","Terrace","Generator","Inverter",
-  "Tuition","Coaching","Exam","Result","Marksheet","Uniform","Library",
+/* ===== INTERNATIONAL ===== */
+"Messi","Ronaldo","MrBeast","Elon","Bitcoin","Marvel","Batman","Joker","Avengers","Thor",
+"Spiderman","Barbie","Oppenheimer","Netflix","Spotify","Burger","Pizza","Sushi","Dubai","London",
 
-  // 🎭 TV / Shows
-  "BiggBoss","KapilSharma","CID","TarakMehta","IndianIdol","Splitsvilla",
+/* ===== RANDOM FUN ===== */
+"Vibe","Drama","Attitude","Ego","Chaos","Legend","Swag","Energy","Focus","Motivation",
+"Alarm","Charger","Headphones","Speaker","Camera","Tripod","Selfie","Filter","Caption","Playlist"
 
-  // 👕 Clothing / Style
-  "Sneakers","Kurti","Jeans","Sherwani","Dupatta","Watch","Chain","Goggles",
+"Breakup","Ex","Rebound","Situationship","Date","BlindDate","Tinder","Bumble","Hinge",
+"RedFlag","GreenFlag","Ghosting","Crush","Proposal","Friendzone","Cheating","Commitment",
+"Shaadi","ArrangedMarriage","LoveMarriage","Rishta","InLaws","Sasural","Dowry","Engagement",
 
-  // 🏠 Household
-  "PressureCooker","Belan","Chimta","Bucket","Mug","Sofa","Mattress","Cooler",
-
-  // 🔥 Extra memes / internet slang nouns
-  "OP","Clutch","Lag","Ping","Spam","Bot","Moderator","Chat","Subscriber"
 ];
 function generateRoomCode() {
   return Math.random().toString(36).substring(2, 7).toUpperCase();
@@ -216,4 +212,5 @@ function showWord(word, imposter) {
   } else {
     document.getElementById("wordDisplay").innerText = word;
   }
+
 }
